@@ -6,11 +6,27 @@
 <link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css"><!-- importando o bootstrap -->
 <title>Projeto Academy</title>
 <meta name="author" content="Nilson Eduardo"/>
+<link rel="stylesheet" href="css/style.css">
+<script src="https://kit.fontawesome.com/006642858d.js"></script><!-- o fontawesome fai importa os icones do JS -->
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;1,600&family=Ubuntu&family=Work+Sans&display=swap" rel="stylesheet">
 </head>
 <body>
-	<p>Olá mundo Spring</p>
-	<h1 th:text=${msg}></h1>
-	<button class="btn btn-primary">TESTE</button>
+	<header>
+	<nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #4CAF50"> <!--navbar do thymeleaf - lg é para dispositivos de tela grande-->
+	<a class="navbar-brand" href="#">
+		<img src="img/logo_header-site.png" WIDTH="200px"/>
+	</a>
+	<button class="navbar-toggler" type="button" data-toglle="collapse" data-target="#navMobile">
+		<span class="navbar-toggler-icon"></span>
+	</button><!-- menu de hamburguer -->
+ 	<div id="navMobile" class="navbar-collapse collapse justify-content-end"> <!--divpara suportar os links--justify é do bootstrap que usa o FLEX-->
+ 	<a class="nav-item nav-link">Home</a>
+ 	<a class="nav-item nav-link">Cadastrar Aluno</a>
+ 	<a class="nav-item nav-link">Pesquisar Aluno</a>
+ 	<a class="nav-item nav-link btn-danger">Sair</a>
+ 	</div>
+	</header>
+	
 	<script src="/webjars/jquery/3.5.1/jquery.min.js"></script>
 	<script src="/webjars/bootstrap/js/bootstrap.min.js"></script>
 </body>

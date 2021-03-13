@@ -1,0 +1,4 @@
+@charset "ISO-8859-1";
+*{margin: 0; padding: 0; box-sizing: border-box;}
+nav{height: 90px; color:#fff;}
+a{cursor: pointer; font-weight: bold;}
