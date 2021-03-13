@@ -38,6 +38,24 @@
 			<scope>runtime</scope>
 			<optional>true</optional>
 		</dependency>
+	
+		<dependency>
+		<groupId>org.webjars</groupId> <!-- library de fronte-end - ela importa os aquivos do bootstrap automatico	-->
+			<artifactId>webjars-locator</artifactId>
+			<version>0.36</version>
+		</dependency>
+		
+		<dependency>
+		<groupId>org.webjars</groupId> <!-- webjars vai gerenciar o jquey	tbm-->
+			<artifactId>jquery</artifactId>
+			<version>3.5.1</version>
+		</dependency>
+		
+		<dependency>
+		<groupId>org.webjars</groupId> <!-- webjars vai gerenciar o jquey	tbm-->
+			<artifactId>bootstrap</artifactId>
+			<version>4.5.0</version>
+		</dependency>
 		
 <!-- 		<dependency> -->
 <!-- 			<groupId>mysql</groupId> -->
