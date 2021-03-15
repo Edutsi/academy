@@ -12,21 +12,45 @@
 </head>
 <body>
 	<header>
-	<nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #4CAF50"> <!--navbar do thymeleaf - lg é para dispositivos de tela grande-->
+	<nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #4CAF50;"> <!--navbar do thymeleaf - lg é para dispositivos de tela grande-->
 	<a class="navbar-brand" href="#">
 		<img src="img/logo_header-site.png" WIDTH="200px"/>
 	</a>
-	<button class="navbar-toggler" type="button" data-toglle="collapse" data-target="#navMobile">
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navMobile">
 		<span class="navbar-toggler-icon"></span>
 	</button><!-- menu de hamburguer -->
  	<div id="navMobile" class="navbar-collapse collapse justify-content-end"> <!--divpara suportar os links--justify é do bootstrap que usa o FLEX-->
- 	<a class="nav-item nav-link">Home</a>
- 	<a class="nav-item nav-link">Cadastrar Aluno</a>
- 	<a class="nav-item nav-link">Pesquisar Aluno</a>
- 	<a class="nav-item nav-link btn-danger">Sair</a>
+ 	<a class="btn-nav nav-item nav-link"><i class="fas fa-home"></i> Home</a>
+	<a class="btn-nav nav-item nav-link"><i class="fas fa-user-graduate"></i> Cadastrar Aluno</a><!--  icones do fontwaousume -->
+ 	<a class="btn-nav nav-item nav-link"><i class="fas fa-search"></i> Pesquisar Aluno</a>
+ 	<a class="btn-nav nav-item nav-link btn-danger"><i class="fas fa-times"></i> Sair</a>
  	</div>
+ 	</nav>
+ 	
 	</header>
+	<section class="neo-section" style="background-image: url('img/bg-index.jpg');"><!-- nome da section aleatorio -->
+	<div class="sombra"></div>	
+	<div class="center neo-container">
+		<h1 class="texto-centro">Sistema de gerenciamento de alunos</h1>	
 	
+	<div class="botoes">
+	<div class="wm">
+	<h5 class="btn">CADASTRAR ALUNO</h5><!--right puxa o botão pra direita -->
+	</div>
+	<div class="wm">
+ 	<h5 class="btn justify-content-center">ENCONTRAR ALUNO</h5><!--justify puxa o botão pro centro -->
+	</div>
+	
+	<div class="clear"></div>
+	</div>
+	</div>
+	</section>
+	<footer >
+	<div class="rodape">
+	<span>Todos os direitos reservados - 2021 &copy; Nilson Eduardo</span>
+	</div>
+	
+	</footer>
 	<script src="/webjars/jquery/3.5.1/jquery.min.js"></script>
 	<script src="/webjars/bootstrap/js/bootstrap.min.js"></script>
 </body>
