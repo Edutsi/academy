@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0"><!--linha de responsividade da pagina -->
+<link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css"><!-- importando o bootstrap -->
+<title>Projeto Academy</title>
+<meta name="author" content="Nilson Eduardo"/>
+<link rel="stylesheet" href="css/style.css">
+<script src="https://kit.fontawesome.com/006642858d.js"></script><!-- o fontawesome fai importa os icones do JS -->
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;1,600&family=Ubuntu&family=Work+Sans&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- CABEÇALHO -->
+<header th:fragment="cabecalho"><!--informando que o header é um fragmento do thymeleaf -->
+	<nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #4CAF50;"> <!--navbar do thymeleaf - lg é para dispositivos de tela grande-->
+	<a class="navbar-brand" th:href="@{/}"><!-- thymeleaf chamando o metodo index do homecontroller -->>
+		<img src="img/logo_header-site.png" WIDTH="200px"/>
+	</a>
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navMobile">
+		<span class="navbar-toggler-icon"></span>
+	</button><!-- menu de hamburguer -->
+ 	<div id="navMobile" class="navbar-collapse collapse justify-content-end"> <!--divpara suportar os links--justify é do bootstrap que usa o FLEX-->
+ 	<a class="btn-nav nav-item nav-link"><i class="fas fa-home"></i> Home</a>
+	<a class="btn-nav nav-item nav-link"><i class="fas fa-user-graduate"></i> Cadastrar Aluno</a><!--  icones do fontwaousume -->
+ 	<a class="btn-nav nav-item nav-link"><i class="fas fa-search"></i> Pesquisar Aluno</a>
+ 	<a class="btn-nav nav-item nav-link btn-danger"><i class="fas fa-times"></i> Sair</a>
+ 	</div>
+ 	</nav>
+ 	
+	</header>
+	<!-- RODAPE -->
+ 	<footer  th:fragment="rodape"><!--informando que é um fragmento do thymeleaf -->
+	<div class="rodape">
+	<span>Todos os direitos reservados - 2021 &copy; Nilson Eduardo</span>
+	</div>
+	
+	</footer>
+	<script src="/webjars/jquery/3.5.1/jquery.min.js"></script>
+	<script src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+</body>
+</html>
