@@ -1,7 +1,9 @@
 package br.com.academy.model;
 
-import javax.persistence.CollectionTable;
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -14,15 +16,18 @@ public class Aluno {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer id;
-	@CollectionTable(name="nome_aluno")//anotação do JPA
+	
+	@Column(name="nome_aluno")//anotação do JPA
 	private String nome;
-	@CollectionTable(name="matricula_aluno")
+	@Column(name="matricula_aluno")
 	private String matricula;
-	@CollectionTable(name="turno")
+	@Column(name="turno")
 	private String turno;
-	@CollectionTable(name="curso")
+	@Column(name="curso")
+	@Enumerated(EnumType.STRING)
 	private Curso curso;
-	@CollectionTable(name="status")
+	@Column(name="status")
+	@Enumerated(EnumType.STRING)
 	private Status status;
 	
 	public Integer getId() {

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0"><!--linha de responsividade da pagina -->
+<link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css"><!-- importando o bootstrap -->
+<title>+ Inserir Alunos</title>
+<meta name="author" content="Nilson Eduardo"/>
+<link rel="stylesheet" href="css/style.css">
+<script src="https://kit.fontawesome.com/006642858d.js"></script><!-- o fontawesome fai importa os icones do JS -->
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;1,600&family=Ubuntu&family=Work+Sans&display=swap" rel="stylesheet">
+</head>
+<body>
+	<!-- RECEBENDO O ATRIBUTO ALUNO -->
+	<div th:replace="fragmentos/fragmentos :: cabecalho"></div><!--chamando o cabeçalho da  pagina fragmentos.html-->
+	<div class="container" style="margin-top: 50px;"><!-- nesse container vai ficar o formulario de cadastro de aluno -->
+	<h4>Inserir Alunos</h4>
+	<hr>
+	<br>
+	<form method="post" action="/insertAlunos" th:object="${aluno}"><!-- vai chamar o @PostMapping do aluno controller -->
+	<div class="row">
+ 		<div class="col-md6 form-group offset-md-3"><!--classe auxiliadora do bootstrap -->
+		<label>Nome do Aluno:</label>
+		<input class="form-control" placeholder="Ex: Nome Sobrenome" th:field="*{nome}">
+		</div>
+	</div>
+	<!--  CURSO -->
+	<div class="row">
+ 		<div class="col-md6 form-group offset-md-3"><!--classe auxiliadora do bootstrap -->
+		<label>Selecione o Curso:</label>
+		<select class="form-control" th:field="*{curso}">
+		<!-- vamo usar um FOREACH para chamar os Enums de cursos usando o thymeleaf-->
+		<!-- No optino abaixo: 1 -criei uma variavel "curso" para receber a iteração - 
+							   2-no th:value chama a variavel ja com a iteração
+							   3-no th:text apresenta para a view -->
+		<option th:each="curso : ${T(br.com.academy.enums.Curso).values()}"
+		 th:value="${curso}" th:text="${curso}"></option>
+		 </select>
+		</div>
+	</div>
+	<!-- MATRÍCULA -->
+	<div class="row">
+ 		<div class="col-md6 form-group offset-md-3"><!--classe auxiliadora do bootstrap -->
+		<label>Gerar Matricula:</label>
+		<input class="form-control" id="matricula" th:field="*{matricula}">
+		<!--Onclick do javascript  -->
+		<button type="button" onclick="GerarMatricula()" class="btn btn-dark" style="margin-top: 10px">Gerar</button>
+		</div>
+	</div>
+	<!--  Status -->
+	<div class="row">
+ 		<div class="col-md6 form-group offset-md-3"><!--classe auxiliadora do bootstrap -->
+		<label>Selecione o Status:</label>
+		<select class="form-control" th:field="*{status}">
+		<option th:each="status : ${T(br.com.academy.enums.Status).values()}"
+		 th:value="${status}" th:text="${status}"></option>
+		 </select>
+		</div>
+	</div>
+	<!-- TURNO -->
+	<div class="row">
+ 		<div class="col-md6 form-group offset-md-3"><!--classe auxiliadora do bootstrap -->
+		<label>Turno:</label>
+		<input class="form-control" placeholder="Ex: Manhã" th:field="*{turno}">
+		</div>
+	</div>
+	
+	<div class="row">
+	<button type="submit" class="btn btn-success offset-md-1">SALVAR</button>
+	&nbsp;&nbsp;&nbsp;&nbsp;<!-- html para dar espaçamento -->
+	<a class="btn btn-outline-danger">VOLTAR</a>
+	
+	</div>
+	
+	</form>
+	</div>
+			<!-- no arquivo main.js contem a função Javascript para gerar um numero aleatorio -->
+			<script src="js/main.js"></script>
+			<script src="/webjars/jquery/3.5.1/jquery.min.js"></script>
+			<script src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+</body>
+</html>
