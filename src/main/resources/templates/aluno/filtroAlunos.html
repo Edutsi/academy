@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0"><!--linha de responsividade da pagina -->
+<link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css"><!-- importando o bootstrap -->
+<title>Encontar Alunos</title>
+<meta name="author" content="Nilson Eduardo"/>
+<link rel="stylesheet" href="css/style.css">
+<script src="https://kit.fontawesome.com/006642858d.js"></script><!-- o fontawesome fai importa os icones do JS -->
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;1,600&family=Ubuntu&family=Work+Sans&display=swap" rel="stylesheet">
+</head>
+<body>
+	<!-- RECEBENDO O ATRIBUTO ALUNO -->
+	<div th:replace="fragmentos/fragmentos :: cabecalho"></div><!--chamando o cabeçalho da  pagina fragmentos.html-->
+	<div class="container" style="margin-top: 50px;"><!-- nesse container vai ficar o formulario de cadastro de aluno -->
+	<h4>Encontar Alunos</h4>
+	<hr>
+	<br>
+		<form method="post">
+			<div class="input-group col-6 offset-3">
+				
+				<input class="form-control" placeholder="Busque pelo nome do aluno...">
+				<div class="input-group-append">
+				<button type="submit" class="btn btn-outline-secondary">Pesquisar</button>
+		
+				</div>	
+			</div>
+		</form>
+	<br>	
+	<hr>
+	
+		<div class="row">
+			<div class="card" style="width: 288px"> <!--clicar na img tbm redireciona  -->
+					<a th:href="@{/alunos-ativos}">
+					<img class="card-img-top"  src="img/Alunos-Ativos.jpg"/>
+					</a>
+				<div class="card-body">
+					<h5>Alunos Ativos no Sistema</h5>
+					<p class="card-text"> Busque por alunos que estão ativos no sistema</p>
+					<a th:href="@{/alunos-ativos}" class="btn btn-outline-primary">Clique Aqui</a><!-- puxa o alunosAtivos do AlunoController -->
+				</div>
+			</div>
+			<!--ALUNOS INATIVOS  -->
+			<div class="card ml-3" style="width: 288px">
+					<a th:href="@{/alunos-inativos}">
+					<img class="card-img-top" src="img/Alunos-Inativos.jpg"/>
+					</a> 
+				<div class="card-body">
+					<h5>Alunos Inativos</h5>
+					<p class="card-text"> Busque por alunos que estão inativos</p>
+					<a th:href="@{/alunos-inativos}" class="btn btn-outline-primary">Clique Aqui</a>
+				</div>
+			</div>
+			<!--ALUNOS CANCELADOS  -->
+			<div class="card ml-3" style="width: 288px">
+					<a th:href="@{/alunos-inativos}">
+					<img class="card-img-top" src="img/Alunos-Cancelados.jpg"/>
+					</a>
+				<div class="card-body">
+					<h5>Alunos Cancelados</h5>
+					<p class="card-text"> Busque por alunos com status cancelado</p>
+					<a th:href="@{/alunos-cancelados}" class="btn btn-outline-primary">Clique Aqui</a>
+				</div>
+			</div>
+			<!--ALUNOS TRANCADOS  -->
+			<div class="card mt-3" style="width: 288px">
+			<a th:href="@{/alunos-trancados}">
+					<img class="card-img-top" src="img/Alunos-Trancados.jpg"/>
+					</a>
+				<div class="card-body">
+					<h5>Alunos Trancados</h5>
+					<p class="card-text"> Busque por alunos com status trancado</p>
+					<a th:href="@{/alunos-trancados}" class="btn btn-outline-primary">Clique Aqui</a>
+				</div>
+			</div>
+			
+		</div>
+	 </div>
+</body>
+</html>

@@ -67,5 +67,42 @@ public class AlunoController {
 		return "redirect:/alunos-adicionados";
 		
 	}
-	
+	@GetMapping("filtro-alunos")
+	public ModelAndView filtroAlunos(){
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("Aluno/filtroAlunos");
+		return mv;
+	}
+	@GetMapping("alunos-ativos")
+	public ModelAndView listaAlunosAtivos() {
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("Aluno/alunos-ativos");// caminho da pagina alunos-ativos
+		mv.addObject("alunosAtivos", alunorepositorio.findByStatusAtivos());// findAll chama todos os dados do banco
+		return mv;
+
+	}
+	@GetMapping("alunos-inativos")
+	public ModelAndView listaAlunosInativos() {
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("Aluno/alunos-inativos");
+		mv.addObject("alunosInativos", alunorepositorio.findByStatusInativos());// chama no for each da view alunos-ativos
+		return mv;
+
+	}
+	@GetMapping("alunos-trancados")
+	public ModelAndView listaAlunosTrancados() {
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("Aluno/alunos-trancados");
+		mv.addObject("alunosInativos", alunorepositorio.findByStatusTrancados());// chama no for each da view alunos-ativos
+		return mv;
+
+	}
+	@GetMapping("alunos-cancelados")
+	public ModelAndView listaAlunosCancelados() {
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("Aluno/alunos-cancelados");
+		mv.addObject("alunosInativos", alunorepositorio.findByStatusCancelados());// chama no for each da view alunos-ativos
+		return mv;
+
+	}
 }
