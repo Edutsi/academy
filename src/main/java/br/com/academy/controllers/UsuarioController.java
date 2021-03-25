@@ -8,12 +8,16 @@ import org.springframework.web.servlet.ModelAndView;
 
 import br.com.academy.dao.UsuarioDao;
 import br.com.academy.model.Usuario;
+import br.com.academy.service.ServiceUsuario;
 
 @Controller
 public class UsuarioController {
 
+	//@Autowired
+	//private UsuarioDao usuarioRepositorio; //removido na aula 18
+	
 	@Autowired
-	private UsuarioDao usuarioRepositorio;
+	private ServiceUsuario serviceUsuario;
 	
 	@GetMapping("/")
 	public ModelAndView login() {
@@ -32,9 +36,11 @@ public class UsuarioController {
 	}
 	
 	@PostMapping("salvarUsuario")
-	public ModelAndView cadastrar(Usuario usuario) {
+	public ModelAndView cadastrar(Usuario usuario) throws Exception {
 	ModelAndView mv = new ModelAndView();
-	usuarioRepositorio.save(usuario);
+	//usuarioRepositorio.save(usuario);//após a implantação da regra de negocio de criptografia no service este não salva mais o user
+	//18 Curso Spring Boot: Criptografia e Camada Service do Login
+	serviceUsuario.salvarUsuario(usuario);
 	mv.setViewName("redirect:/");
 	
 	return mv;
