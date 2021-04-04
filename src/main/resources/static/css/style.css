@@ -27,7 +27,7 @@ a.btn-nav:hover{color: #81C784;}
 .botoes{padding: 2% 15%;}
 .btn:hover{color: #CE93D8; background-color: rgba(0,0,0,0.5);}
 .rodape{color: #fff; background-color: #4527A0; text-align: center; font-size: 1.25em; padding: 15px;}
-
+.wm a{text-decoration: none; padding: 20px 30px;}
 /*Responsividade*/
 @media screen and (max-width: 667px){
 	.wm{width: 100%;}

@@ -11,6 +11,12 @@
 <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;1,600&family=Ubuntu&family=Work+Sans&display=swap" rel="stylesheet">
 </head>
 <body>
+	<div style="margin: 0; text-align: center;" class="alert alert-warning alert-dismissible fade show" role="alert">
+  		<strong>Seja Bem Vindo: <span th:text="${session.usuarioLogado.user}"></span></strong>
+  		<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+	</div>
+	
+	 
  	<div th:replace="fragmentos/fragmentos :: cabecalho"></div><!--chamando o cabeçalho da  pagina fragmentos.html-->
 	<section class="neo-section" style="background-image: url('img/bg-index.jpg');"><!-- nome da section aleatorio -->
 	<div class="sombra"></div>	
@@ -18,11 +24,12 @@
 		<h1 class="texto-centro">Sistema de gerenciamento de alunos</h1>	
 	
 	<div class="botoes">
+	
 	<div class="wm">
-	<h5 class="btn">CADASTRAR ALUNO</h5><!--right puxa o botão pra direita -->
+	<a th:href="@{inserirAlunos}" class="btn-home">CADASTRAR ALUNO</a><!--chama do alunoController  -->
 	</div>
 	<div class="wm">
- 	<h5 class="btn justify-content-center">ENCONTRAR ALUNO</h5><!--justify puxa o botão pro centro -->
+ 	<a th:href="@{alunos-adicionados}" class="btn-home">ENCONTRAR ALUNO</a>
 	</div>
 	
 	<div class="clear"></div>

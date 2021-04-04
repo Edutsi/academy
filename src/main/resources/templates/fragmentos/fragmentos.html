@@ -22,10 +22,15 @@
 		<span class="navbar-toggler-icon"></span>
 	</button><!-- menu de hamburguer -->
  	<div id="navMobile" class="navbar-collapse collapse justify-content-end"> <!--divpara suportar os links--justify é do bootstrap que usa o FLEX-->
+ 	
  	<a class="btn-nav nav-item nav-link"><i class="fas fa-home"></i> Home</a>
 	<a class="btn-nav nav-item nav-link" th:href="@{inserirAlunos}"><i class="fas fa-user-graduate"></i> Cadastrar Aluno</a><!--  icones do fontwaousume -->
- 	<a class="btn-nav nav-item nav-link"><i class="fas fa-search"></i> Pesquisar Aluno</a>
- 	<a class="btn-nav nav-item nav-link btn-danger"><i class="fas fa-times"></i> Sair</a>
+ 	<a data-toggle="modal" data-target="#modalPesquisa" class="btn-nav nav-item nav-link"><i class="fas fa-search"></i> Pesquisar Aluno</a>
+ 	
+ 	<form action="/logout" method="post">
+ 	<button type="submit" class="btn-nav nav-item nav-link btn-danger"><i class="fas fa-times"></i> Sair</button>
+ 	</form>
+ 	
  	</div>
  	</nav>
  	

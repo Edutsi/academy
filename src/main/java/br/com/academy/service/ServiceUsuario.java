@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import br.com.academy.dao.UsuarioDao;
 import br.com.academy.exceptions.CriptoExistException;
 import br.com.academy.exceptions.EmailExistsException;
+import br.com.academy.exceptions.ServiceExc;
 import br.com.academy.model.Usuario;
 import br.com.academy.util.Util;
 //As classes do pacote SERVICE recebem/implementam as regras de negócio
@@ -32,5 +33,10 @@ public class ServiceUsuario {
 		//salvando o usuario
 		repositorioUsuario.save(user);
 	}
-
+	///pesquisa por usuario
+	public Usuario loginUser(String user, String senha) throws ServiceExc{
+		Usuario userlogin = repositorioUsuario.buscarLogin(user, senha);
+		return userlogin;
+	}
+		 
 }
